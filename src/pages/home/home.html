@@ -1,0 +1,46 @@
+<ion-header> <br>
+  <ion-navbar>
+    <ion-title>
+      List of available devices
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-end>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-row style='background-color:#305680; color: white'>
+    <ion-col>
+      <strong>Devices</strong>
+    </ion-col>
+    <ion-col>
+      <strong>RSSI</strong>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col> <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
+           {{ device.name || 'Unnamed' }} </button>
+   </ion-col>
+    <ion-col>
+      <button ion-item *ngFor="let device of devices">
+        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>
+      </button>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button (click)="scan()">
+        Refresh
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

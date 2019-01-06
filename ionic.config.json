@@ -1,0 +1,7 @@
+{
+  "name": "Emonio-App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

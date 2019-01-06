@@ -1,0 +1,75 @@
+<ion-header> <br>
+  <ion-navbar>
+    <ion-title>
+        {{ device.name ||  'Unnamed'}}
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button (click)="goToDeviceinfoPage()" icon-end>
+              <!-- <button ion-button (click)="goToDeviceinfoPage()" icon-end> -->
+        <ion-icon name="menu"></ion-icon>
+      </button>
+       <!-- <button ion-button (click)="goToDeviceinfoPage()"> Deviceinfo</button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row style='background-color:#305680; color: white'>
+          <ion-col>
+            <strong>Firmware </strong>
+          </ion-col>
+          </ion-row>
+
+                  <p> Energy: {{ energy }} </p>
+          <!-- <p>System ID {{sysid}}  </p>
+              <p>Model Number {{modelnr}}</p>
+                  <p>Serial Number {{serialnr}}</p>
+                      <p>Firmware Revision {{firmware}}</p>
+                          <p>Hardware Revision {{hardwarerevision}}</p>
+                              <p>Software Revision {{softwarerevision}}</p>
+                              <p>Manufacture Name{{manu}}</p>
+                              <p>{{cert}} Regulatory Certification Data List</p>
+                              <p>PnP ID {{pnpid}}</p> -->
+
+
+
+
+    </ion-grid>
+
+
+    <!-- <ion-grid>
+    <ion-row style='background-color:#305680; color: white'>
+      <ion-col>
+        <strong>Device Information</strong>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>  <p> Energy: {{ energy }} </p>  </ion-row>
+    <ion-row>  <p>System ID {{sysid}}</p>  </ion-row>
+    <ion-row>    <p>Model Number {{modelnr}}</p>  </ion-row>
+    <ion-row>    <p>Serial Number {{serialnr}}</p></ion-row>
+    <ion-row>   <p>Firmware Revision {{firmware}}</p>  </ion-row>
+    <ion-row>   <p>Hardware Revision {{hardwarerevision}}</p> </ion-row>
+    <ion-row>   <p>Software Revision {{softwarerevision}}</p> </ion-row>
+    <ion-row> <p>Manufacture Name{{manu}}</p> </ion-row>
+    <ion-row>   <p>{{cert}} Regulatory Certification Data List</p> </ion-row>
+    <ion-row>   <p>PnP ID {{pnpid}}</p> </ion-row>
+
+
+    </ion-grid> -->
+
+
+
+
+</ion-content>
+
+<ion-footer>
+<ion-toolbar>
+  <!--<ion-buttons end>
+    <button ion-button (click)="goToHomePage()">
+      Back
+    </button>
+  </ion-buttons>-->
+</ion-toolbar>
+</ion-footer>

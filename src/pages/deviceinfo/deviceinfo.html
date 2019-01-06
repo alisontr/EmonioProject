@@ -1,0 +1,38 @@
+<!--
+  Generated template for the DeviceinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-grid>
+      <ion-row style='background-color:#305680; color: white'>
+        <ion-col>
+          <strong>Device Information </strong>
+        </ion-col>
+        </ion-row>
+        <p> {{this.softwarerevision}} </p>
+        <p>{{this.manu}}</p>
+        <p>System ID {{sysid}}</p>
+            <p>Model Number {{modelnr}}</p>
+                <p>Serial Number {{serialnr}}</p>
+                    <p>Firmware Revision {{firmware}}</p>
+                        <p>Hardware Revision {{hardwarerevision}}</p>
+                            <p>Software Revision {{softwarerevision}}</p>
+                            <p>Manufacture Name{{manu}}</p>
+                            <p>{{cert}} Regulatory Certification Data List</p>
+                            <p>PnP ID {{pnpid}}</p>
+
+
+  </ion-grid>
+
+</ion-content>
