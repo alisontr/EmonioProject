@@ -55,7 +55,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/newproject/src/pages/home/home.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      List of available devices\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680; color: white\'>\n    <ion-col>\n      <strong>Devices</strong>\n    </ion-col>\n    <ion-col>\n      <strong>RSSI</strong>\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col> <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">\n           {{ device.name || \'Unnamed\' }} </button>\n   </ion-col>\n    <ion-col>\n      <button ion-item *ngFor="let device of devices">\n        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Refresh\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/newproject/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/home/home.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n      List of available devices\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button icon-end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n  <ion-row style=\'background-color:#305680; color: white\'>\n    <ion-col>\n      <strong>Devices</strong>\n    </ion-col>\n    <ion-col>\n      <strong>RSSI</strong>\n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n    <ion-col> <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">\n           {{ device.name || \'Unnamed\' }} </button>\n   </ion-col>\n    <ion-col>\n      <button ion-item *ngFor="let device of devices">\n        <p>{{ device.rssi }} &nbsp;<ion-icon name="stats"></ion-icon> </p>\n      </button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-buttons end>\n      <button ion-button (click)="scan()">\n        Refresh\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_ble__["a" /* BLE */],
@@ -95,18 +95,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 */
 var DeviceinfoPage = /** @class */ (function () {
     function DeviceinfoPage(navCtrl, navParams) {
-        //
-        // this.manuu=this.navParams.manu;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        //
+        // this.manuu=this.navParams.manu;
+        // this.manu.navParams.get('manu');
         // console.log(this.manuu);
+        // this.obj=this.navParams.data;
+        // this.objtwo=this.navParams.data;
+        this.manu = this.navParams.data.manu;
+        this.sysid = this.navParams.data.sysid;
+        this.pnpid = this.navParams.data.pnpid;
+        this.cert = this.navParams.data.cert;
+        this.softwarerevision = this.navParams.data.softwarerevision;
+        this.firmware = this.navParams.data.firmware;
+        this.hardwarerevision = this.navParams.data.hardwarerevision;
+        this.serialnr = this.navParams.data.serialnr;
+        this.modelnr = this.navParams.data.modelnr;
+        // this.manu=this.obj.manu;
     }
     DeviceinfoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DeviceinfoPage');
     };
     DeviceinfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-deviceinfo',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/newproject/src/pages/deviceinfo/deviceinfo.html"*/'<!--\n  Generated template for the DeviceinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title></ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n  <ion-grid>\n      <ion-row style=\'background-color:#305680; color: white\'>\n        <ion-col>\n          <strong>Device Information </strong>\n        </ion-col>\n        </ion-row>\n        <p> {{this.softwarerevision}} </p>\n        <p>{{this.manu}}</p>\n        <p>System ID {{sysid}}</p>\n            <p>Model Number {{modelnr}}</p>\n                <p>Serial Number {{serialnr}}</p>\n                    <p>Firmware Revision {{firmware}}</p>\n                        <p>Hardware Revision {{hardwarerevision}}</p>\n                            <p>Software Revision {{softwarerevision}}</p>\n                            <p>Manufacture Name{{manu}}</p>\n                            <p>{{cert}} Regulatory Certification Data List</p>\n                            <p>PnP ID {{pnpid}}</p>\n\n\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/newproject/src/pages/deviceinfo/deviceinfo.html"*/,
+            selector: 'page-deviceinfo',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/deviceinfo/deviceinfo.html"*/'<!--\n  Generated template for the DeviceinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title></ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n  <ion-grid>\n      <ion-row style=\'background-color:#305680; color: white\'>\n        <ion-col>\n          <strong>Device Information </strong>\n        </ion-col>\n        </ion-row>\n        <!-- <p>{{obj}}</p>\n        <p>{{objtwo}}</p>\n        <!--\n        <p> {{this.softwarerevision}} </p> -->\n        <!-- <p>{{this.manu}}</p> -->\n        <p>System ID {{sysid}}</p>\n            <p>Model Number {{modelnr}}</p>\n                <p>Serial Number {{serialnr}}</p>\n                    <p>Firmware Revision {{firmware}}</p>\n                        <p>Hardware Revision {{hardwarerevision}}</p>\n                            <p>Software Revision {{softwarerevision}}</p>\n                            <p>Manufacture Name{{manu}}</p>\n                            <p>{{cert}} Regulatory Certification Data List</p>\n                            <p>PnP ID {{pnpid}}</p>\n\n\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/deviceinfo/deviceinfo.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
     ], DeviceinfoPage);
@@ -203,8 +216,8 @@ var DetailPage = /** @class */ (function () {
         this.energy = new String;
         this.login = "login admin:emonio";
         this.energyGet = "energy";
-        // manu:any;
-        this.manu = new String;
+        //  manu:any;
+        //public  manu= new String;
         this.sysid = new String;
         this.pnpid = new String;
         this.cert = new String;
@@ -396,13 +409,33 @@ var DetailPage = /** @class */ (function () {
     //   console.log(this.manu);
     //   this.navCtrl.push(DeviceinfoPage,{manu:this.manu,softwarerevision:this.softwarerevision});
     // }
+    // public obj=
+    // {
+    //   manu:this.manu,
+    //
+    //   pnpid:this.pnpid,
+    //   cert:this.cert,
+    //   softwarerevision:this.softwarerevision,
+    //   firmware:this.firmware,
+    //   hardwarerevision:this.hardwarerevision,
+    //   serialnr:this.serialnr,
+    //   modelnr: this.modelnr
+    //
+    //
+    // }
     DetailPage.prototype.goToDeviceinfoPage = function () {
-        console.log(this.manu + this.sysid + this.pnpid + this.cert + this.softwarerevision + this.firmware + this.hardwarerevision + this.serialnr + this.modelnr + 'pushed in');
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__deviceinfo_deviceinfo__["a" /* DeviceinfoPage */], { manu: this.manu, sysid: this.sysid, pnpid: this.pnpid, cert: this.cert, softwarerevision: this.softwarerevision, firmware: this.firmware, hardwarerevision: this.hardwarerevision, serialnr: this.serialnr, modelnr: this.modelnr });
+        console.log(this.manu + 'pushed in');
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__deviceinfo_deviceinfo__["a" /* DeviceinfoPage */], { manu: this.manu, sysid: this.sysid, pnpid: this.pnpid,
+            cert: this.cert,
+            softwarerevision: this.softwarerevision,
+            firmware: this.firmware,
+            hardwarerevision: this.hardwarerevision,
+            serialnr: this.serialnr,
+            modelnr: this.modelnr });
     };
     DetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-detail',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/newproject/src/pages/detail/detail.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n        {{ device.name ||  \'Unnamed\'}}\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button (click)="goToDeviceinfoPage()" icon-end>\n              <!-- <button ion-button (click)="goToDeviceinfoPage()" icon-end> -->\n        <ion-icon name="menu"></ion-icon>\n      </button>\n       <!-- <button ion-button (click)="goToDeviceinfoPage()"> Deviceinfo</button> -->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row style=\'background-color:#305680; color: white\'>\n          <ion-col>\n            <strong>Firmware </strong>\n          </ion-col>\n          </ion-row>\n\n                  <p> Energy: {{ energy }} </p>\n          <!-- <p>System ID {{sysid}}  </p>\n              <p>Model Number {{modelnr}}</p>\n                  <p>Serial Number {{serialnr}}</p>\n                      <p>Firmware Revision {{firmware}}</p>\n                          <p>Hardware Revision {{hardwarerevision}}</p>\n                              <p>Software Revision {{softwarerevision}}</p>\n                              <p>Manufacture Name{{manu}}</p>\n                              <p>{{cert}} Regulatory Certification Data List</p>\n                              <p>PnP ID {{pnpid}}</p> -->\n\n\n\n\n    </ion-grid>\n\n\n    <!-- <ion-grid>\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <strong>Device Information</strong>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>  <p> Energy: {{ energy }} </p>  </ion-row>\n    <ion-row>  <p>System ID {{sysid}}</p>  </ion-row>\n    <ion-row>    <p>Model Number {{modelnr}}</p>  </ion-row>\n    <ion-row>    <p>Serial Number {{serialnr}}</p></ion-row>\n    <ion-row>   <p>Firmware Revision {{firmware}}</p>  </ion-row>\n    <ion-row>   <p>Hardware Revision {{hardwarerevision}}</p> </ion-row>\n    <ion-row>   <p>Software Revision {{softwarerevision}}</p> </ion-row>\n    <ion-row> <p>Manufacture Name{{manu}}</p> </ion-row>\n    <ion-row>   <p>{{cert}} Regulatory Certification Data List</p> </ion-row>\n    <ion-row>   <p>PnP ID {{pnpid}}</p> </ion-row>\n\n\n    </ion-grid> -->\n\n\n\n\n</ion-content>\n\n<ion-footer>\n<ion-toolbar>\n  <!--<ion-buttons end>\n    <button ion-button (click)="goToHomePage()">\n      Back\n    </button>\n  </ion-buttons>-->\n</ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/newproject/src/pages/detail/detail.html"*/,
+            selector: 'page-detail',template:/*ion-inline-start:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/detail/detail.html"*/'<ion-header> <br>\n  <ion-navbar>\n    <ion-title>\n        {{ device.name ||  \'Unnamed\'}}\n      </ion-title>\n      <ion-buttons end>\n      <button ion-button (click)="goToDeviceinfoPage()" icon-end>\n              <!-- <button ion-button (click)="goToDeviceinfoPage()" icon-end> -->\n        <ion-icon name="menu"></ion-icon>\n      </button>\n       <!-- <button ion-button (click)="goToDeviceinfoPage()"> Deviceinfo</button> -->\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row style=\'background-color:#305680; color: white\'>\n          <ion-col>\n            <strong>Firmware </strong>\n          </ion-col>\n          </ion-row>\n\n                  <p> Energy: {{ energy }} </p>\n          <!-- <p>System ID {{sysid}}  </p>\n              <p>Model Number {{modelnr}}</p>\n                  <p>Serial Number {{serialnr}}</p>\n                      <p>Firmware Revision {{firmware}}</p>\n                          <p>Hardware Revision {{hardwarerevision}}</p>\n                              <p>Software Revision {{softwarerevision}}</p>\n                              <p>Manufacture Name{{manu}}</p>\n                              <p>{{cert}} Regulatory Certification Data List</p>\n                              <p>PnP ID {{pnpid}}</p> -->\n\n\n\n\n    </ion-grid>\n\n\n    <!-- <ion-grid>\n    <ion-row style=\'background-color:#305680; color: white\'>\n      <ion-col>\n        <strong>Device Information</strong>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>  <p> Energy: {{ energy }} </p>  </ion-row>\n    <ion-row>  <p>System ID {{sysid}}</p>  </ion-row>\n    <ion-row>    <p>Model Number {{modelnr}}</p>  </ion-row>\n    <ion-row>    <p>Serial Number {{serialnr}}</p></ion-row>\n    <ion-row>   <p>Firmware Revision {{firmware}}</p>  </ion-row>\n    <ion-row>   <p>Hardware Revision {{hardwarerevision}}</p> </ion-row>\n    <ion-row>   <p>Software Revision {{softwarerevision}}</p> </ion-row>\n    <ion-row> <p>Manufacture Name{{manu}}</p> </ion-row>\n    <ion-row>   <p>{{cert}} Regulatory Certification Data List</p> </ion-row>\n    <ion-row>   <p>PnP ID {{pnpid}}</p> </ion-row>\n\n\n    </ion-grid> -->\n\n\n\n\n</ion-content>\n\n<ion-footer>\n<ion-toolbar>\n  <!--<ion-buttons end>\n    <button ion-button (click)="goToHomePage()">\n      Back\n    </button>\n  </ion-buttons>-->\n</ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/EmonioProject/src/pages/detail/detail.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_native_ble__["a" /* BLE */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_native_ble__["a" /* BLE */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* NgZone */]) === "function" && _e || Object])
     ], DetailPage);
@@ -541,7 +574,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/alison/AppEntwicklung/newproject/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/newproject/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/alison/AppEntwicklung/EmonioProject/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/alison/AppEntwicklung/EmonioProject/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

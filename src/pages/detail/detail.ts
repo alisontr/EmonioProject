@@ -33,9 +33,9 @@ export class DetailPage {
   energy = new String;
   login = "login admin:emonio";
   energyGet = "energy";
-  // manu:any;
+//  manu:any;
 
-public  manu= new String;
+//public  manu= new String;
 public  sysid= new String;
 public  pnpid= new String;
 public  cert = new String;
@@ -286,10 +286,44 @@ this.ble.read(device.id, '180A', '2A50').then(
     //   this.navCtrl.push(DeviceinfoPage,{manu:this.manu,softwarerevision:this.softwarerevision});
     // }
 
+    // public obj=
+    // {
+    //   manu:this.manu,
+    //
+    //   pnpid:this.pnpid,
+    //   cert:this.cert,
+    //   softwarerevision:this.softwarerevision,
+    //   firmware:this.firmware,
+    //   hardwarerevision:this.hardwarerevision,
+    //   serialnr:this.serialnr,
+    //   modelnr: this.modelnr
+    //
+    //
+    // }
+
+
+
     goToDeviceinfoPage() {
-      console.log(this.manu + this.sysid + this.pnpid+ this.cert+ this.softwarerevision+ this.firmware+ this.hardwarerevision+this.serialnr+this.modelnr+ 'pushed in');
-      this.navCtrl.push(DeviceinfoPage,{manu:this.manu,sysid:this.sysid,pnpid:this.pnpid,cert:this.cert,softwarerevision:this.softwarerevision,firmware:this.firmware,hardwarerevision:this.hardwarerevision,serialnr:this.serialnr,modelnr:this.modelnr });
+      console.log(this.manu+ 'pushed in');
+      this.navCtrl.push(DeviceinfoPage,{manu:this.manu,sysid:this.sysid,  pnpid:this.pnpid,
+        cert:this.cert,
+        softwarerevision:this.softwarerevision,
+        firmware:this.firmware,
+        hardwarerevision:this.hardwarerevision,
+        serialnr:this.serialnr,
+        modelnr: this.modelnr});
     }
+
+    // goToDeviceinfoPageTwo()
+    // {
+    //   console.log(this.sysid+ 'pushed in');
+    //   this.navCtrl.push(DeviceinfoPage,this.sysid;
+    //
+    // }
+
+
+
+    //,{manu:this.manu,sysid:this.sysid,pnpid:this.pnpid,cert:this.cert,softwarerevision:this.softwarerevision,firmware:this.firmware,hardwarerevision:this.hardwarerevision,serialnr:this.serialnr,modelnr:this.modelnr }
 
     // goToDeviceinfoPage(softwarerevision){
     //   console.log(JSON.stringify(softwarerevision) + ' selected ');
