@@ -35,7 +35,7 @@ export class DetailPage {
   energyGet = "energy";
 //  manu:any;
 
-//public  manu= new String;
+public  manu= new String;
 public  sysid= new String;
 public  pnpid= new String;
 public  cert = new String;
